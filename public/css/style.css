@@ -1,0 +1,16 @@
+#realToCoins{
+	display: none ;
+}
+.jumbotron {
+	text-align: center;
+	background-color: hsl(102, 26%, 61%);
+	
+}
+.drop{
+	background-color: #666;
+}
+#div-result {
+	display: none;
+}
+
+

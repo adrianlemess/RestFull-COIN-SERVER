@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="pt_br">
+    <head>
+    	<meta name="viewport" content="width=device-width, initial-scale=1">
+    	 <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+		<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+        <script src="coinsscript.js"></script>
+        <link rel="stylesheet" href="css/style.css">
+        <meta charset="utf-8"> 
+		<script type="text/javascript">
+		
+	</script>
+
+    </head>
+    <body>
+    <div class="container">
+    	<div class="jumbotron">
+	    	<h1>Conversão de Moedas</h1>
+	    	<button id="buttonChoice" class="btn btn-default btn-lg" type="button" value="coinsToReal" onclick="changeForm()">Trocar Conversão </button>
+	    	<div class="row">
+	    	<form class="form-inline" id= "coinsToReal">
+			    	<p id="text1">Converter valor de moedas estrangeiras para real</p>
+			    	<select class="form-control btn-primary" id="coins1"> 
+				        {% for coins in valores %}
+				       		<option value={{coins.valor}}>{{coins.nome}} </option>
+				        {% endfor %} 
+			    	</select>
+			    	<label> Para reais: </label>
+			        <input class="form-control"type="number"  step="0.1" min="0.00" id="valueCoin1">
+			        <button id="buttonsubmit1" class="btn btn-primary" type="submit" onClick="calculateCoinsToReal(); return false;">Calcular</button>
+			    
+	  		</form>
+	  		</div>
+			<div class="row">
+	  		<form class="form-inline" id="realToCoins">
+	    	
+		    	<p id="text1">Converter valor de real para moedas estrangeiras</p>
+		    	<input type="number"  step="0.1" min="0.00" id="valueCoin2">
+		    	<label> Reais para: </label>
+		    	<!-- btn btn-primary dropdown-toggle -->
+		    	<select class="form-control btn-primary" id="coins2"> 
+			    	{% for coins in valores %}
+				    	<option value={{ coins.valor }}>{{coins.nome}} </option>
+				    {% endfor %}
+			    </select>
+		        <button id="buttonsubmit2" class="btn btn-primary" type="submit" onClick="calculateRealToCoins(); return false;">Calcular</button>
+	  		</form>
+	  		</div>
+	  		<div id="div-result" class="alert alert-success">
+  				<p id="result"></p>
+			</div>
+			
+		</div>
+	</div>
+
+    </body>
+</html>
